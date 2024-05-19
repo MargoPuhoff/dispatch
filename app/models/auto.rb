@@ -22,4 +22,12 @@ class Auto < ApplicationRecord
 	def title
 		mark+" "+num
 	end
+
+	def self.ransackable_attributes(auth_object = nil)
+		["created_at", "driver_id", "id", "id_value", "mark", "num", "status", "updated_at"]
+	end
+
+	def self.ransackable_associations(auth_object = nil)
+		["driver", "treks"]
+		end
 end

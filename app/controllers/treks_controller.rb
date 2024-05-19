@@ -3,7 +3,8 @@ class TreksController < ApplicationController
 
   # GET /treks or /treks.json
   def index
-    @treks = Trek.all
+		@q = Trek.ransack(params[:q])
+		@treks = @q.result(distinct: true)
   end
 
   # GET /treks/1 or /treks/1.json

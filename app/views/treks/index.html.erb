@@ -6,9 +6,9 @@
 <table>
 	<thead>
 		<tr>
-			<th scope="col">Дата</th>
-			<th scope="col">Адрес доставка</th>
-			<th scope="col">Склад</th>
+			<th scope="col"><%= sort_link(@q, :trek_date, "Дата", default_order: :desc) %></th>
+			<th scope="col"><%= sort_link(@q, :address, "Адрес", default_order: :asc) %></th>
+			<th scope="col"><%= sort_link(@q, :store, "Склад", default_order: :asc) %></th>
 			<th scope="col">Водитель</th>
 			<th scope="col">Автомобиль</th>
 			<th></th>

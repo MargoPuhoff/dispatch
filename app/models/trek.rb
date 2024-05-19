@@ -12,4 +12,12 @@
 #
 class Trek < ApplicationRecord
 	belongs_to :auto
+
+	def self.ransackable_attributes(auth_object = nil)
+    ["address", "auto_id", "created_at", "id", "id_value", "store", "trek_date", "updated_at"]
+  end
+
+	def self.ransackable_associations(auth_object = nil)
+		["auto"]
+		end
 end
