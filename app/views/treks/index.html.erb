@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Treks</h1>
+
+<div id="treks">
+  <% @treks.each do |trek| %>
+    <%= render trek %>
+    <p>
+      <%= link_to "Show this trek", trek %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New trek", new_trek_path %>

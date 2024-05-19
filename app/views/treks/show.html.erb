@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @trek %>
+
+<div>
+  <%= link_to "Edit this trek", edit_trek_path(@trek) %> |
+  <%= link_to "Back to treks", treks_path %>
+
+  <%= button_to "Destroy this trek", @trek, method: :delete %>
+</div>
