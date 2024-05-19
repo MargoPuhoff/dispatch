@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Treks</h1>
+<h1>Все заявки</h1>
+<%= link_to "Создать заявку", new_trek_path %>
 
-<div id="treks">
-  <% @treks.each do |trek| %>
-    <%= render trek %>
-    <p>
-      <%= link_to "Show this trek", trek %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New trek", new_trek_path %>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Дата</th>
+			<th scope="col">Адрес доставка</th>
+			<th scope="col">Склад</th>
+			<th scope="col">Водитель</th>
+			<th scope="col">Автомобиль</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @treks.each do |trek| %>
+			<%= render trek %>
+		<% end %>
+	</tbody>	
+</table>

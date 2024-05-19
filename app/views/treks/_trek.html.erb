@@ -1,22 +1,8 @@
-<div id="<%= dom_id trek %>">
-  <p>
-    <strong>Address:</strong>
-    <%= trek.address %>
-  </p>
-
-  <p>
-    <strong>Store:</strong>
-    <%= trek.store %>
-  </p>
-
-  <p>
-    <strong>Trek date:</strong>
-    <%= trek.trek_date %>
-  </p>
-
-  <p>
-    <strong>Auto:</strong>
-    <%= trek.auto.try(:title)%>
-  </p>
-
-</div>
+<tr>
+	<td><%= trek.trek_date %></td>
+  <td><%= trek.address %></td>
+	<td><%= trek.store %></td>
+	<td><%= trek.auto.try(:driver).try(:name) %></td>
+	<td><%= trek.auto.try(:title) %></td>
+  <td><%= link_to "Подробнее", trek %></td>
+</tr>
