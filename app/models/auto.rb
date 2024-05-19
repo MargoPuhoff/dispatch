@@ -11,4 +11,5 @@
 #  updated_at :datetime         not null
 #
 class Auto < ApplicationRecord
+	belongs_to :driver
 end

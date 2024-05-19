@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :driver_id, style: "display: block" %>
-    <%= form.number_field :driver_id %>
+    <%= form.select(:driver_id, ( Driver.all.collect {|t| [ t.name, t.id ] }) + ["",nil] ) %>
   </div>
 
   <div>

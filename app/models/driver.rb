@@ -10,4 +10,5 @@
 #  updated_at :datetime         not null
 #
 class Driver < ApplicationRecord
+	has_many :auto
 end
