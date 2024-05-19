@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_19_211625) do
   enable_extension "plpgsql"
 
   create_table "autos", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 1
     t.integer "driver_id"
     t.string "num"
     t.string "mark"
