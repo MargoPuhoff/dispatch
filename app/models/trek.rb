@@ -11,4 +11,5 @@
 #  updated_at :datetime         not null
 #
 class Trek < ApplicationRecord
+	belongs_to :auto
 end

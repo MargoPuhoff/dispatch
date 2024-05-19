@@ -12,9 +12,14 @@
 #
 class Auto < ApplicationRecord
 	belongs_to :driver
+	has_many :treks
 
 	enum status: {
     remont: 0,
     active: 1 
   }
+
+	def title
+		mark+" "+num
+	end
 end

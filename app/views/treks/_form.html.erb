@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :auto_id, style: "display: block" %>
-    <%= form.number_field :auto_id %>
+    <%= form.select(:auto_id, ( Auto.active.collect {|t| [ t.title, t.id ] })) %>
   </div>
 
   <div>
