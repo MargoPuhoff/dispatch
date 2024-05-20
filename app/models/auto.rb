@@ -11,23 +11,23 @@
 #  updated_at :datetime         not null
 #
 class Auto < ApplicationRecord
-	belongs_to :driver
-	has_many :treks
+  belongs_to :driver
+  has_many :treks
 
-	enum status: {
+  enum status: {
     remont: 0,
     active: 1 
   }
 
-	def title
-		mark+" "+num
-	end
+  def title
+    mark+" "+num
+  end
 
-	def self.ransackable_attributes(auth_object = nil)
-		["created_at", "driver_id", "id", "id_value", "mark", "num", "status", "updated_at"]
-	end
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "driver_id", "id", "id_value", "mark", "num", "status", "updated_at"]
+  end
 
-	def self.ransackable_associations(auth_object = nil)
-		["driver", "treks"]
-		end
+  def self.ransackable_associations(auth_object = nil)
+    ["driver", "treks"]
+    end
 end

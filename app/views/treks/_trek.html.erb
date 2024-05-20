@@ -1,8 +1,8 @@
 <tr>
-	<td><%= trek.trek_date %></td>
+  <td><%= trek.trek_date %></td>
   <td><%= trek.address %></td>
-	<td><%= trek.store %></td>
-	<td><%= trek.auto.try(:driver).try(:name) %></td>
-	<td><%= trek.auto.try(:title) %></td>
+  <td><%= trek.store %></td>
+  <td><%= trek.auto.try(:driver).try(:name) %></td>
+  <td><%= trek.auto.try(:title) %></td>
   <td><%= link_to "Подробнее", trek %></td>
 </tr>

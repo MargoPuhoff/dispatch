@@ -4,21 +4,21 @@
 <%= link_to "Создать заявку", new_trek_path %>
 
 <table>
-	<thead>
-		<tr>
-			<th scope="col"><%= sort_link(@q, :trek_date, "Дата", default_order: :desc) %></th>
-			<th scope="col"><%= sort_link(@q, :address, "Адрес", default_order: :asc) %></th>
-			<th scope="col"><%= sort_link(@q, :store, "Склад", default_order: :asc) %></th>
-			<th scope="col">Водитель</th>
-			<th scope="col">Автомобиль</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @treks.each do |trek| %>
-			<%= render trek %>
-		<% end %>
-	</tbody>	
+  <thead>
+    <tr>
+      <th scope="col"><%= sort_link(@q, :trek_date, "Дата", default_order: :desc) %></th>
+      <th scope="col"><%= sort_link(@q, :address, "Адрес", default_order: :asc) %></th>
+      <th scope="col"><%= sort_link(@q, :store, "Склад", default_order: :asc) %></th>
+      <th scope="col">Водитель</th>
+      <th scope="col">Автомобиль</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @treks.each do |trek| %>
+      <%= render trek %>
+    <% end %>
+  </tbody>	
 </table>
 
 <%= link_to "Автомобили", autos_path%>
