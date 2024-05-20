@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Не успела полностью сделать задание. На данный момент здесь готов только функционал кабинета диспетчера и нет регистрации. В https://gitlab.edu.rnds.pro/margo/dispatch_service проект, который я делала первоначально. Его я тоже изменяла множетсво раз, пока совсем не запуталась, но в нем я смогла сделать регистрацию с аутентификацией. Потом я узнала что можно генерировать модели и контроллеры с помощью scaffold и поняла, что могла бы все сделать гораздо быстрее. Решила начать занова и как раз первым делом создать модели и реализовать кабинет диспетчера  
