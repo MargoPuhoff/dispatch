@@ -26,7 +26,7 @@ class TreksController < ApplicationController
 
     respond_to do |format|
       if @trek.save
-        format.html { redirect_to trek_url(@trek), notice: "Trek was successfully created." }
+        format.html { redirect_to trek_url(@trek), notice: "Заявка создана" }
         format.json { render :show, status: :created, location: @trek }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class TreksController < ApplicationController
   def update
     respond_to do |format|
       if @trek.update(trek_params)
-        format.html { redirect_to trek_url(@trek), notice: "Trek was successfully updated." }
+        format.html { redirect_to trek_url(@trek), notice: "Заявка имзенена" }
         format.json { render :show, status: :ok, location: @trek }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class TreksController < ApplicationController
     @trek.destroy!
 
     respond_to do |format|
-      format.html { redirect_to treks_url, notice: "Trek was successfully destroyed." }
+      format.html { redirect_to treks_url, notice: "Заявка удалена" }
       format.json { head :no_content }
     end
   end
