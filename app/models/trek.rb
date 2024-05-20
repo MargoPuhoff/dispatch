@@ -2,13 +2,15 @@
 #
 # Table name: treks
 #
-#  id         :bigint           not null, primary key
-#  address    :string
-#  store      :string
-#  trek_date  :date
-#  auto_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :bigint           not null, primary key
+#  address       :string
+#  store         :string
+#  trek_date     :date
+#  auto_id       :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  dispatcher_id :bigint
+#  completed     :boolean          default(FALSE)
 #
 class Trek < ApplicationRecord
   belongs_to :auto
@@ -21,5 +23,9 @@ class Trek < ApplicationRecord
 
   def self.ransackable_associations(auth_object = nil)
     ["auto"]
-    end
+  end
+
+	def status_str
+		completed ? "Выполнена" : "Не выполнена"
+	end
 end

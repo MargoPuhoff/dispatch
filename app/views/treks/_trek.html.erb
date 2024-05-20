@@ -5,6 +5,6 @@
   <td><%= trek.auto.try(:driver).try(:name) %></td>
   <td><%= trek.auto.try(:title) %></td>
 	<td><%= trek.dispatcher.try(:name) %></td>
-	<td><%= trek.completed %></td>
+	<td><%= trek.status_str %></td>
   <td><%= link_to "Подробнее", trek %></td>
 </tr>
