@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 	 'logout'  => 'sessions#destroy'
 
   # Defines the root path route ("/")
-  root "treks#index"
+  root "home#index"
 end
