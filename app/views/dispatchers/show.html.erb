@@ -3,8 +3,8 @@
 <%= render @dispatcher %>
 
 <div>
-  <%= link_to "Edit this dispatcher", edit_dispatcher_path(@dispatcher) %> |
-  <%= link_to "Back to dispatchers", dispatchers_path %>
+  <%= link_to "Изменить", edit_dispatcher_path(@dispatcher) %> |
+  <%= link_to "Вернуться на главную", root_path %>
 
-  <%= button_to "Destroy this dispatcher", @dispatcher, method: :delete %>
+  <%= button_to "Удалить", @dispatcher, method: :delete %>
 </div>

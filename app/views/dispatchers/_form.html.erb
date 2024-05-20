@@ -1,7 +1,7 @@
 <%= form_with(model: dispatcher) do |form| %>
   <% if dispatcher.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(dispatcher.errors.count, "error") %> prohibited this dispatcher from being saved:</h2>
+      <h2><%= pluralize(dispatcher.errors.count, "ошибка") %> невозможно сохранить:</h2>
 
       <ul>
         <% dispatcher.errors.each do |error| %>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, "Имя", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
@@ -22,12 +22,12 @@
   </div>
 
   <div>
-    <%= form.label :phone, style: "display: block" %>
+    <%= form.label :phone, "Номер телефона", style: "display: block" %>
     <%= form.text_field :phone %>
   </div>
 
   <div>
-    <%= form.label :password, style: "display: block" %>
+    <%= form.label :password, "Пароль", style: "display: block" %>
     <%= form.password_field :password %>
   </div>
 

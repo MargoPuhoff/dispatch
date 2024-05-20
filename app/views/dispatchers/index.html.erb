@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Dispatchers</h1>
+<h1>Все диспетчеры</h1>
 
 <div id="dispatchers">
   <% @dispatchers.each do |dispatcher| %>
     <%= render dispatcher %>
     <p>
-      <%= link_to "Show this dispatcher", dispatcher %>
+      <%= link_to "Подробнее", dispatcher %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New dispatcher", new_dispatcher_path %>
+<%= link_to "Добавить нового", new_dispatcher_path %>
