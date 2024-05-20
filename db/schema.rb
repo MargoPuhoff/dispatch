@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_181518) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_185323) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_181518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "dispatcher_id"
+    t.boolean "completed", default: false
     t.index ["dispatcher_id"], name: "index_treks_on_dispatcher_id"
   end
 
