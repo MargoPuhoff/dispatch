@@ -3,7 +3,11 @@ class TreksController < ApplicationController
 
   # GET /treks or /treks.json
   def index
-		@q = Trek.joins(:drivers).ransack(params[:q])
+		if driver_logged_in?
+			@q = Trek.joins(:drivers).where("autos.driver_id=?", @current_driver.id).ransack(params[:q])
+		else
+			@q = Trek.joins(:drivers).ransack(params[:q])
+		end
 		@treks = @q.result(distinct: true)
   end
 
