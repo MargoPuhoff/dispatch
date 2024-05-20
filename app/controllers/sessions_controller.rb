@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-		redirect_to controller: :home, action: :index1
+		redirect_to controller: :home, action: :index
   end
 end
