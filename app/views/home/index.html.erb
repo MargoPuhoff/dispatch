@@ -1,1 +1,24 @@
-<div>Добропожаловать</div>
+<div>Добро пожаловать</div>
+
+<h2>Войти как диспетчер</h2>
+<h3><%= logged_in?%></h3>
+<%= form_for(:session, url: login_path) do |form| %>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password, "Пароль",  style: "display: block" %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit "Войти" %>
+  </div>
+  
+  <div>
+    <%= link_to "У меня нет аккаунта", new_dispatcher_path%>
+  </div>
+<% end %>
