@@ -1,5 +1,4 @@
 module SessionsHelper
-
   def log_in(dispatcher)
     session[:dispatcher_id] = dispatcher.id
   end
@@ -12,8 +11,8 @@ module SessionsHelper
     !current_dispatcher.nil?
   end
 
-	def log_out
-		session.delete(:dispatcher_id)
+  def log_out
+    session.delete(:dispatcher_id)
     @current_dispatcher = nil
-	end
+  end
 end

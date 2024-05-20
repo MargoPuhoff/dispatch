@@ -1,1 +1,1 @@
-json.partial! "treks/trek", trek: @trek
+json.partial! 'treks/trek', trek: @trek

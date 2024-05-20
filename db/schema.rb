@@ -10,50 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_185323) do
+ActiveRecord::Schema[7.1].define(version: 20_240_520_185_323) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "autos", force: :cascade do |t|
-    t.integer "status", default: 1
-    t.integer "driver_id"
-    t.string "num"
-    t.string "mark"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'autos', force: :cascade do |t|
+    t.integer 'status', default: 1
+    t.integer 'driver_id'
+    t.string 'num'
+    t.string 'mark'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "dispatchers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
+  create_table 'dispatchers', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.string 'phone'
+    t.string 'password'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'password_digest'
   end
 
-  create_table "drivers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password"
-    t.string "password_digest"
+  create_table 'drivers', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.string 'phone'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'password'
+    t.string 'password_digest'
   end
 
-  create_table "treks", force: :cascade do |t|
-    t.string "address"
-    t.string "store"
-    t.date "trek_date"
-    t.integer "auto_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "dispatcher_id"
-    t.boolean "completed", default: false
-    t.index ["dispatcher_id"], name: "index_treks_on_dispatcher_id"
+  create_table 'treks', force: :cascade do |t|
+    t.string 'address'
+    t.string 'store'
+    t.date 'trek_date'
+    t.integer 'auto_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'dispatcher_id'
+    t.boolean 'completed', default: false
+    t.index ['dispatcher_id'], name: 'index_treks_on_dispatcher_id'
   end
 
-  add_foreign_key "treks", "dispatchers"
+  add_foreign_key 'treks', 'dispatchers'
 end

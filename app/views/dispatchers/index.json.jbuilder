@@ -1,1 +1,1 @@
-json.array! @dispatchers, partial: "dispatchers/dispatcher", as: :dispatcher
+json.array! @dispatchers, partial: 'dispatchers/dispatcher', as: :dispatcher

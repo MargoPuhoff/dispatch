@@ -1,1 +1,1 @@
-json.partial! "drivers/driver", driver: @driver
+json.partial! 'drivers/driver', driver: @driver

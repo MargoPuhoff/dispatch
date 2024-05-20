@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string
 #
-require "test_helper"
+require 'test_helper'
 
 class DispatcherTest < ActiveSupport::TestCase
   # test "the truth" do

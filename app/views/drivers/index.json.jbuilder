@@ -1,1 +1,1 @@
-json.array! @drivers, partial: "drivers/driver", as: :driver
+json.array! @drivers, partial: 'drivers/driver', as: :driver

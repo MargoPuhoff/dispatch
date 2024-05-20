@@ -12,7 +12,7 @@
 #  dispatcher_id :bigint
 #  completed     :boolean          default(FALSE)
 #
-require "test_helper"
+require 'test_helper'
 
 class TrekTest < ActiveSupport::TestCase
   # test "the truth" do

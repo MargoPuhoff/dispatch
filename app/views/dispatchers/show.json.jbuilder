@@ -1,1 +1,1 @@
-json.partial! "dispatchers/dispatcher", dispatcher: @dispatcher
+json.partial! 'dispatchers/dispatcher', dispatcher: @dispatcher

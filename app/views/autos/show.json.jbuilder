@@ -1,1 +1,1 @@
-json.partial! "autos/auto", auto: @auto
+json.partial! 'autos/auto', auto: @auto

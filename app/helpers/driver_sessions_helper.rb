@@ -1,5 +1,4 @@
 module DriverSessionsHelper
-
   def driver_log_in(driver)
     session[:driver_id] = driver.id
   end
@@ -12,8 +11,8 @@ module DriverSessionsHelper
     !current_driver.nil?
   end
 
-	def driver_log_out
-		session.delete(:driver_id)
+  def driver_log_out
+    session.delete(:driver_id)
     @current_driver = nil
-	end
+  end
 end

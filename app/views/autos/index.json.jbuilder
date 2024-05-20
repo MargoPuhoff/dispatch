@@ -1,1 +1,1 @@
-json.array! @autos, partial: "autos/auto", as: :auto
+json.array! @autos, partial: 'autos/auto', as: :auto

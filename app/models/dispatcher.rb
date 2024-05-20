@@ -12,6 +12,6 @@
 #  password_digest :string
 #
 class Dispatcher < ApplicationRecord
-	has_many :treks
+  has_many :treks
   has_secure_password
 end
