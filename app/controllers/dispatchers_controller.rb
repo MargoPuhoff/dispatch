@@ -8,7 +8,7 @@ class DispatchersController < ApplicationController
 
   # GET /dispatchers/1 or /dispatchers/1.json
   def show
-		@dispatcher = Dispatcher.find(params[:id])
+    @dispatcher = Dispatcher.find(params[:id])
   end
 
   # GET /dispatchers/new
@@ -25,7 +25,9 @@ class DispatchersController < ApplicationController
     @dispatcher = Dispatcher.new(dispatcher_params)
 
     respond_to do |format|
+
       if @dispatcher.save
+        log_in @dispatcher
         format.html { redirect_to dispatcher_url(@dispatcher), notice: "Вы успешно зарегестировались" }
         format.json { render :show, status: :created, location: @dispatcher }
       else

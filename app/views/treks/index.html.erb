@@ -23,3 +23,8 @@
 
 <%= link_to "Автомобили", autos_path%>
 <%= link_to "Водители", drivers_path%>
+<br>
+
+<% if logged_in? %>
+  <%= link_to "Выйти", logout_path, method: "delete"%>
+<% end %>
