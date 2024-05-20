@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div>
@@ -28,10 +28,10 @@
 
   <div>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Стать диспетчером" %>
   </div>
 <% end %>

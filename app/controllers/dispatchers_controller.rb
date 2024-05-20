@@ -8,6 +8,7 @@ class DispatchersController < ApplicationController
 
   # GET /dispatchers/1 or /dispatchers/1.json
   def show
+		@dispatcher = Dispatcher.find(params[:id])
   end
 
   # GET /dispatchers/new
@@ -25,7 +26,7 @@ class DispatchersController < ApplicationController
 
     respond_to do |format|
       if @dispatcher.save
-        format.html { redirect_to dispatcher_url(@dispatcher), notice: "Dispatcher was successfully created." }
+        format.html { redirect_to dispatcher_url(@dispatcher), notice: "Вы успешно зарегестировались" }
         format.json { render :show, status: :created, location: @dispatcher }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class DispatchersController < ApplicationController
   def update
     respond_to do |format|
       if @dispatcher.update(dispatcher_params)
-        format.html { redirect_to dispatcher_url(@dispatcher), notice: "Dispatcher was successfully updated." }
+        format.html { redirect_to dispatcher_url(@dispatcher), notice: "Ваши данные изменены" }
         format.json { render :show, status: :ok, location: @dispatcher }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class DispatchersController < ApplicationController
     @dispatcher.destroy!
 
     respond_to do |format|
-      format.html { redirect_to dispatchers_url, notice: "Dispatcher was successfully destroyed." }
+      format.html { redirect_to dispatchers_url, notice: "Вы больше не работаете" }
       format.json { head :no_content }
     end
   end
