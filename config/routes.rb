@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
   resources :dispatchers
-  resources :treks
+  resources :treks do
+		member do
+			get :complete
+		end
+	end
   resources :autos
   resources :drivers
   

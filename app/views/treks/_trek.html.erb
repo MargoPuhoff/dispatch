@@ -6,5 +6,6 @@
   <td><%= trek.auto.try(:title) %></td>
 	<td><%= trek.dispatcher.try(:name) %></td>
 	<td><%= trek.status_str %></td>
+	<td><%= trek.completed ? link_to("Выполнить", complete_trek_path(trek)) : " "  %></td>
   <td><%= link_to "Подробнее", trek %></td>
 </tr>

@@ -1,5 +1,5 @@
 class TreksController < ApplicationController
-  before_action :set_trek, only: %i[ show edit update destroy ]
+  before_action :set_trek, only: %i[ show edit update destroy complete ]
 
   # GET /treks or /treks.json
   def index
@@ -23,6 +23,12 @@ class TreksController < ApplicationController
   # GET /treks/1/edit
   def edit
   end
+
+	def complete
+		@trek.completed = true
+		@trek.save
+		redirect_to treks_path
+	end
 
   # POST /treks or /treks.json
   def create
