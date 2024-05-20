@@ -3,8 +3,8 @@
 <%= render @auto %>
 
 <div>
-  <%= link_to "Edit this auto", edit_auto_path(@auto) %> |
-  <%= link_to "Back to autos", autos_path %>
+  <%= link_to "Редактировать", edit_auto_path(@auto) %> |
+  <%= link_to "Вернуться ко всем", autos_path %>
 
-  <%= button_to "Destroy this auto", @auto, method: :delete %>
+  <%= button_to "Удалить", @auto, method: :delete %>
 </div>

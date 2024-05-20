@@ -3,7 +3,7 @@ class TreksController < ApplicationController
 
   # GET /treks or /treks.json
   def index
-		@q = Trek.ransack(params[:q])
+		@q = Trek.joins(:drivers).ransack(params[:q])
 		@treks = @q.result(distinct: true)
   end
 

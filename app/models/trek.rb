@@ -12,6 +12,7 @@
 #
 class Trek < ApplicationRecord
 	belongs_to :auto
+	has_many :drivers, :through => :auto
 
 	def self.ransackable_attributes(auth_object = nil)
     ["address", "auto_id", "created_at", "id", "id_value", "store", "trek_date", "updated_at"]
