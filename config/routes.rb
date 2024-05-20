@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-  get "up" => "rails/health#show", as: :rails_health_check
+  get 	 'logout'  => 'sessions#destroy'
 
   # Defines the root path route ("/")
   root "treks#index"

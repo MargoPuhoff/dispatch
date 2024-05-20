@@ -11,4 +11,9 @@ module SessionsHelper
   def logged_in?
     !current_dispatcher.nil?
   end
+
+	def log_out
+		session.delete(:dispatcher_id)
+    @current_dispatcher = nil
+	end
 end
