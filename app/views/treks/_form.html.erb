@@ -1,7 +1,7 @@
 <%= form_with(model: trek) do |form| %>
   <% if trek.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(trek.errors.count, "error") %> prohibited this trek from being saved:</h2>
+      <h2><%= pluralize(trek.errors.count, "ошибка") %> невозможно сохранить</h2>
 
       <ul>
         <% trek.errors.each do |error| %>
@@ -12,26 +12,26 @@
   <% end %>
 
   <div>
-    <%= form.label :address, style: "display: block" %>
+    <%= form.label :address,"Адрес", style: "display: block" %>
     <%= form.text_field :address %>
   </div>
 
   <div>
-    <%= form.label :store, style: "display: block" %>
+    <%= form.label :store, "Склад", style: "display: block" %>
     <%= form.text_field :store %>
   </div>
 
   <div>
-    <%= form.label :trek_date, style: "display: block" %>
+    <%= form.label :trek_date, "Дата", style: "display: block" %>
     <%= form.date_field :trek_date %>
   </div>
 
   <div>
-    <%= form.label :auto_id, style: "display: block" %>
+    <%= form.label :auto_id,"Автомобиль", style: "display: block" %>
     <%= form.select(:auto_id, ( Auto.active.collect {|t| [ t.title, t.id ] })) %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Создать заявку"%>
   </div>
 <% end %>

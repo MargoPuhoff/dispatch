@@ -1,7 +1,7 @@
 <%= form_with(model: driver) do |form| %>
   <% if driver.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+      <h2><%= pluralize(driver.errors.count, "ошибка") %> не удалось сохранить</h2>
 
       <ul>
         <% driver.errors.each do |error| %>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, "Имя", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
@@ -22,11 +22,11 @@
   </div>
 
   <div>
-    <%= form.label :phone, style: "display: block" %>
+    <%= form.label :phone,"Номер телефона", style: "display: block" %>
     <%= form.text_field :phone %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Создать водителя"%>
   </div>
 <% end %>

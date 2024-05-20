@@ -3,8 +3,8 @@
 <%= render @trek %>
 
 <div>
-  <%= link_to "Edit this trek", edit_trek_path(@trek) %> |
-  <%= link_to "Back to treks", treks_path %>
+  <%= link_to "Редактировать", edit_trek_path(@trek) %> |
+  <%= link_to "Вернуться ко всем", treks_path %>
 
-  <%= button_to "Destroy this trek", @trek, method: :delete %>
+  <%= button_to "Удалить", @trek, method: :delete %>
 </div>
