@@ -9,7 +9,7 @@ module SessionsHelper
   end
 
   def logged_in?
-    !@current_dispatcher.nil?
+    !current_dispatcher.nil?
   end
 
 	def log_out
