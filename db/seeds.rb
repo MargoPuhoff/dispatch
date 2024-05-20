@@ -8,10 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-d1 = Driver.create(name: "Наталья", email: "natal@natal.com", phone: "111", password: "natal123")
-d2 = Driver.create(name: "Иван", email: "ivan@ivan.com", phone: "222")
-d3 = Driver.create(name: "Алексей", email: "alex@alex.com", phone: "333")
-d4 = Driver.create(name: "Анастасия", email: "anast@anast.com", phone: "444")
+d1 = Driver.create(name: "Наталья", email: "natal@natal.com", phone: "111", password: "123")
+d2 = Driver.create(name: "Иван", email: "ivan@ivan.com", phone: "222", password: "123")
+d3 = Driver.create(name: "Алексей", email: "alex@alex.com", phone: "333", password: "123")
+d4 = Driver.create(name: "Анастасия", email: "anast@anast.com", phone: "444", password: "123")
 
 a1 = Auto.create(status: 1, num: "1ааа11", mark: "А Марка", driver_id: d1.id)
 a2 = Auto.create(status: 1, num: "1ббб11", mark: "Г Марка", driver_id: d2.id)

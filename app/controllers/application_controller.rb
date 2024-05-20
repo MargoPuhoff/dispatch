@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def check_user
-		if (!check_dispathcer) || (!check_driver) 
+		if (!check_dispathcer) && (!check_driver) 
 			redirect_to controller: :home, action: :index 
 		end
 	end

@@ -8,6 +8,7 @@ class DriverSessionsController < ApplicationController
 		driver = Driver.find_by(email: params[:session][:email].downcase)
 
     if driver && driver.authenticate(params[:session][:password])
+			puts "+++++++++++++++++++++"
       driver_log_in driver
       redirect_to treks_path
     else 
