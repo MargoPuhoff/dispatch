@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_144445) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_154444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_144445) do
     t.integer "auto_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "dispatcher_id"
+    t.index ["dispatcher_id"], name: "index_treks_on_dispatcher_id"
   end
 
+  add_foreign_key "treks", "dispatchers"
 end
