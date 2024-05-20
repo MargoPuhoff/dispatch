@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dispatchers</h1>
+
+<div id="dispatchers">
+  <% @dispatchers.each do |dispatcher| %>
+    <%= render dispatcher %>
+    <p>
+      <%= link_to "Show this dispatcher", dispatcher %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dispatcher", new_dispatcher_path %>

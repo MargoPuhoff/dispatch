@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dispatchers
   resources :treks
   resources :autos
   resources :drivers

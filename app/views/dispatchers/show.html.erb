@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dispatcher %>
+
+<div>
+  <%= link_to "Edit this dispatcher", edit_dispatcher_path(@dispatcher) %> |
+  <%= link_to "Back to dispatchers", dispatchers_path %>
+
+  <%= button_to "Destroy this dispatcher", @dispatcher, method: :delete %>
+</div>
