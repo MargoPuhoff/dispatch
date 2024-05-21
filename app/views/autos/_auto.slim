@@ -1,0 +1,17 @@
+#<%= dom_id auto %>
+  p
+    strong
+      | Статус:
+    |  <%= auto.status %> 
+  p
+    strong
+      | Водитель:
+    |  <%= auto.driver.name if auto.driver %> 
+  p
+    strong
+      | Номер:
+    |  <%= auto.num %> 
+  p
+    strong
+      | Марка:
+    |  <%= auto.mark %> 

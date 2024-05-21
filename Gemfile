@@ -6,6 +6,7 @@ ruby '3.2.3'
 gem 'bcrypt'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 gem 'ransack'
+gem 'html2slim'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

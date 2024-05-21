@@ -1,0 +1,6 @@
+h1
+  | Редактирование автомобиля
+|  <%= render "form", auto: @auto %> 
+br
+div
+  |  <%= link_to "Посмотреть", @auto %> | <%= link_to "Вернуться ко всем", autos_path %> 
