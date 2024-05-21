@@ -1,0 +1,12 @@
+p style="color: green" = notice
+
+h1
+  | Автомобили
+
+#autos
+  - @autos.each do |auto|
+    == render auto
+    p
+      = link_to "Посмотреть", auto
+
+= link_to "Добавить новый", new_auto_path
