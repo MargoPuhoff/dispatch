@@ -1,0 +1,12 @@
+p style="color: green" = notice
+
+= render @auto 
+
+div class="flex mx-3 w-48 justify-around"
+	p class="text-violet-800 hover:text-black"  
+		= link_to "Назад", autos_path
+	p class="hover:text-violet-800"
+		= link_to "Редактировать", edit_auto_path(@auto)  
+
+div class="m-3 py-2 px-14 w-48 font-medium border border-violet-800 rounded-2xl"
+	= button_to "Удалить", @auto, method: :delete	

@@ -1,0 +1,9 @@
+h1 class="text-3xl font-bold mx-2 my-3"
+  | Новый автомобиль
+
+= render "form", auto: @auto 
+
+br
+
+div class="mx-2 my-3 hover:text-violet-800"
+  = link_to "Назад", autos_path

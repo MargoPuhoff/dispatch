@@ -1,0 +1,16 @@
+div id="#{dom_id(auto)}" class="w-1/6 m-3 p-1.5 border border-violet-800 rounded-2xl hover:shadow-md"
+  p
+    strong Статус:
+    = auto.status
+
+  p
+    strong Водитель:
+    = auto.driver.name if auto.driver
+
+  p
+    strong Номер:
+    = auto.num
+
+  p
+    strong Марка:
+    = auto.mark

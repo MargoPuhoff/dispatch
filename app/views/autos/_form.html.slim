@@ -1,0 +1,29 @@
+div class="mx-2 my-3 w-60 p-3 flex-col"
+  = form_with(model: auto) do |form| 
+    - if auto.errors.any?
+      div style="color: red"
+        h2 = "#{pluralize(auto.errors.count, 'ошибка')} невозможно создать"
+        ul
+          - auto.errors.each do |error|
+            li = error.full_message
+
+    div class="py-2"
+      = form.label :status, "Статус", style: "display: block"
+        = form.select :status, Auto.statuses.keys
+
+    div class="py-2"
+      = form.label :driver_id, "Водитель", style: "display: block"
+      = form.select :driver_id, (Driver.all.collect {|t| [t.name, t.id]}) + ["", nil]
+
+    div class="py-2"
+      = form.label :num, "Номер", style: "display: block"
+      p class="w-max border border-violet-800"
+       = form.text_field :num
+
+    div class="py-2"
+      = form.label :mark, "Марка", style: "display: block"
+      p class="w-max border border-violet-800"
+        = form.text_field :mark
+
+    div class="w-48 my-4 py-2 px-14 border border-violet-800 rounded-2xl bg-violet-800 text-white"
+      = form.submit "Изменить"
