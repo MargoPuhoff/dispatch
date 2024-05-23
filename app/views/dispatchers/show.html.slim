@@ -1,0 +1,12 @@
+p style="color: green" = notice
+
+= render @dispatcher
+
+div class="flex mx-3 w-48 justify-around"
+	p class="text-emerald-700 hover:text-black" 
+  	= link_to "Редактировать", edit_dispatcher_path(@dispatcher)
+	p class="hover:text-emerald-700"
+  	= link_to "Назад", dispatchers_path
+
+div class="m-3 py-2 px-14 w-48 font-medium border border-emerald-700 rounded-2xl"
+	= button_to "Удалить", @dispatcher, method: :delete

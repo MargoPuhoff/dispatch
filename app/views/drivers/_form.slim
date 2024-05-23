@@ -9,23 +9,23 @@ div class="mx-2 my-3 w-60 p-3 flex-col"
 
     div class="py-2"
       = form.label :name, "Имя", style: "display: block" 
-      p class="w-max border border-emerald-700"
+      p class="w-max border border-violet-800"
         = form.text_field :name 
 
     div class="py-2"
       = form.label :phone,"Номер телефона", style: "display: block" 
-      p class="w-max border border-emerald-700"
+      p class="w-max border border-violet-800"
         = form.text_field :phone
 
 		div class="py-2"
       = form.label :email, style: "display: block" 
-      p class="w-max border border-emerald-700"
+      p class="w-max border border-violet-800"
         = form.email_field :email 
 
 		div class="py-2"
       = form.label :password,"Пароль", style: "display: block" 
-      p class="w-max border border-emerald-700"
+      p class="w-max border border-violet-800"
         = form.password_field :phone
 
-    div class="w-48 my-4 py-2 px-16 border border-emerald-700 rounded-2xl bg-emerald-700 text-white"
+    div class="w-48 my-4 py-2 px-16 border border-violet-800 rounded-2xl bg-violet-800 text-white"
       = form.submit "Сохранить"			
