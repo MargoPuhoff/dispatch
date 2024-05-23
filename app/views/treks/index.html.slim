@@ -1,20 +1,24 @@
 p style="color: green" = notice
 
 nav class="m-2 flex"
-  p class="px-4 hover:text-emerald-700"
-      - if logged_in?
-        = link_to "Выйти", logout_path, method: "delete"
-  p class="px-2 hover:text-emerald-700"
-    = link_to "Автомобили", autos_path
-  p class="px-2 hover:text-emerald-700"
-    = link_to "Водители", drivers_path
-  
+  - if logged_in? 
+    p class="px-4 hover:text-emerald-700"
+      = link_to "Выйти", logout_path, method: "delete"
+    p class="px-4 hover:text-emerald-700"
+      = link_to "Водители", drivers_path
+
+  - if driver_logged_in?       
+    p class="px-4 hover:text-emerald-700" 
+      = link_to "Выйти", driver_logout_path, method: "delete"	
+    p class="px-4 hover:text-emerald-700" 
+      = link_to "Автомобили", autos_path
 
 h1 class="text-3xl font-bold mx-2 my-3" 
-  | Все заявки
+  | Заявки
 
-p class="mx-2 py-2 px-12 w-1/6 border border-emerald-700 rounded-2xl hover:shadow-md"
-   = link_to "Создать заявку", new_trek_path
+- if logged_in?
+  p class="mx-2 py-2 px-12 w-1/6 border border-emerald-700 rounded-2xl hover:shadow-md"
+    = link_to "Создать заявку", new_trek_path
 
 table class="m-4 border border-emerald-700 rounded-2xl"
   thead class="border border-emerald-700"
@@ -24,7 +28,6 @@ table class="m-4 border border-emerald-700 rounded-2xl"
       th(scope="col") = sort_link(@q, :store, "Склад", default_order: :asc)
       th Водитель
       th Автомобиль
-      th Диспетчер
       th Статус
       th
       th

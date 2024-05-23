@@ -27,4 +27,4 @@ div class="mx-2 my-3 w-60 p-3 flex-col"
       = form.select(:auto_id, ( Auto.active.collect {|t| [ t.title, t.id ] }))  
 
     div class="w-48 my-4 py-2 px-16 border border-emerald-700 rounded-2xl bg-emerald-700 text-white"
-      = form.submit "Создать" 
+      = form.submit "Сохранить" 
