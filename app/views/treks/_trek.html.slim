@@ -1,0 +1,19 @@
+tr class="border border-emerald-700" 
+  td class="px-2"
+    = trek.trek_date
+  td
+    = trek.address 
+  td
+    = trek.store
+  td
+    = trek.auto.try(:driver).try(:name)
+  td
+    = trek.auto.try(:title) 
+  td
+    = trek.dispatcher.try(:name) 
+  td
+    = trek.status_str
+  td
+    = trek.completed ? link_to("Выполнить", complete_trek_path(trek)) : " " 
+  td class="px-2 hover:text-emerald-700"
+    = link_to "Подробнее", trek 

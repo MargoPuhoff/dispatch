@@ -1,0 +1,12 @@
+p style="color: green" = notice
+
+= render @trek 
+
+div class="flex mx-3 w-48 justify-around"
+	p class="text-emerald-700 hover:text-black"  
+		= link_to "Назад", treks_path
+	p class="hover:text-emerald-700"	
+		= link_to "Редактировать", edit_trek_path(@trek) 
+
+div class="m-3 py-2 px-14 w-48 font-medium border border-emerald-700 rounded-2xl"
+	= button_to "Удалить", @trek, method: :delete 

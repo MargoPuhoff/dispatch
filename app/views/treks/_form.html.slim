@@ -1,0 +1,30 @@
+div class="mx-2 my-3 w-60 p-3 flex-col"
+  = form_with(model: trek) do |form| 
+    - if trek.errors.any? 
+      div style="color: red"
+        h2 = "#{pluralize(trek.errors.count, 'ошибка')} невозможно создать"
+        ul
+          - trek.errors.each do |error|
+            li = error.full_message
+
+    div class="py-2"
+      = form.label :address, "Адрес", style: "display: block" 
+      p class="w-max border border-emerald-700"
+        = form.text_field :address 
+
+    div class="py-2"
+      = form.label :store, "Склад", style: "display: block" 
+      p class="w-max border border-emerald-700"
+        = form.text_field :store 
+
+    div class="py-2"
+      = form.label :trek_date, "Дата", style: "display: block" 
+      p class="w-max border border-emerald-700"
+        = form.date_field :trek_date  
+
+    div class="py-2"
+      = form.label :auto_id,"Автомобиль", style: "display: block" 
+      = form.select(:auto_id, ( Auto.active.collect {|t| [ t.title, t.id ] }))  
+
+    div class="w-48 my-4 py-2 px-16 border border-emerald-700 rounded-2xl bg-emerald-700 text-white"
+      = form.submit "Создать" 
