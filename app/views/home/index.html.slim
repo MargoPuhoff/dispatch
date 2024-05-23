@@ -1,0 +1,42 @@
+
+div class="my-3 text-3xl font-bold flex justify-center"
+  | Добро пожаловать!
+
+div class="flex text-2xl justify-around"
+  p
+    | Войти как диспетчер
+  p
+    | Войти как водитель
+
+div class="flex justify-around"
+
+  div class="my-3 p-3 border border-emerald-700 rounded-2xl" 
+    = form_for(:session, url: login_path) do |form| 
+      div class="py-2"
+        = form.label :email, style: "display: block" 
+        p class="w-max border border-emerald-700"
+          = form.email_field :email 
+      div class="py-2"
+        = form.label :password, "Пароль", style: "display: block"
+        p class="w-max border border-emerald-700"
+          = form.password_field :password  
+      div class="py-1 px-16 my-2 border border-emerald-700 rounded-2xl bg-emerald-700 text-white"
+        = form.submit "Войти" 
+      div class="text-xs px-10 hover:text-emerald-700"
+        = link_to "У меня нет аккаунта", new_dispatcher_path
+
+  div	class="my-3 p-3 border border-violet-800 rounded-2xl"
+    = @current_driver.try(:email) 
+    = form_for(:session, url: driver_login_path) do |form| 
+      div class="py-2"
+        = form.label :email, style: "display: block" 
+        p class="w-max border border-violet-800"
+          = form.email_field :email 
+      div class="py-2"
+        = form.label :password, "Пароль", style: "display: block" 
+        p class="w-max border border-violet-800"
+          = form.password_field :password 
+      div class="py-1 px-16 my-2 border border-violet-800 rounded-2xl bg-violet-800 text-white"
+        = form.submit "Войти" 
+      div class="text-xs px-10 hover:text-violet-800"
+        = link_to "У меня нет аккаунта", new_driver_path 

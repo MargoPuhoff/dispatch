@@ -1,0 +1,19 @@
+div class="mx-2 my-3 w-60 p-3 flex-col"
+  = form_for(:session, url: login_path) do |form|  
+
+    div class="py-2"
+      = form.label :email, style: "display: block" 
+      p class="w-max border border-violet-800"
+        = form.email_field :email 
+
+    div class="py-2"
+      = form.label :password, "Пароль", style: "display: block" 
+      p class="w-max border border-violet-800"
+        = form.password_field :password  
+
+    div class="py-2"
+      = form.submit "Войти"  
+
+    div class="py-2"
+      = link_to "У меня нет аккаунта", new_dispatcher_path 
+ 
