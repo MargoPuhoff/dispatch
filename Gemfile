@@ -8,6 +8,7 @@ gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 gem 'html2slim'
 gem 'ransack'
 gem 'slim-rails'
+gem 'faker'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

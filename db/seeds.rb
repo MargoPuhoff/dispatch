@@ -8,27 +8,47 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-d1 = Driver.create(name: 'Наталья', email: 'natal@natal.com', phone: '111', password: '123')
-d2 = Driver.create(name: 'Иван', email: 'ivan@ivan.com', phone: '222', password: '123')
-d3 = Driver.create(name: 'Алексей', email: 'alex@alex.com', phone: '333', password: '123')
-d4 = Driver.create(name: 'Анастасия', email: 'anast@anast.com', phone: '444', password: '123')
+Driver.destroy_all
+Auto.destroy_all
+Trek.destroy_all
+Dispatcher.destroy_all
 
-a1 = Auto.create(status: 1, num: '1ааа11', mark: 'А Марка', driver_id: d1.id)
-a2 = Auto.create(status: 1, num: '1ббб11', mark: 'Г Марка', driver_id: d2.id)
-a3 = Auto.create(status: 1, num: '1ввв11', mark: 'Д Марка', driver_id: d3.id)
-a4 = Auto.create(status: 1, num: '1ггг11', mark: 'У Марка', driver_id: d4.id)
-a5 = Auto.create(status: 0, num: '1ддд11', mark: 'А Марка', driver_id: d2.id)
+5.times do
+  Driver.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, password: "123")
+end
 
-dis1 = Dispatcher.create(name: 'Анна', email: 'anna@anna.com', phone: '555', password: 'anna123')
-dis2 = Dispatcher.create(name: 'Мария', email: 'maria@maria.com', phone: '666', password: 'maria123')
-dis3 = Dispatcher.create(name: 'Владимир', email: 'vlad@vlad.com', phone: '777', password: 'vlad123')
-dis4 = Dispatcher.create(name: 'Павел', email: 'pavel@pavel.com', phone: '888', password: 'pavel123')
+drivers = Driver.all
 
-Trek.create(trek_date: 1.days.ago, address: 'А Адрес', store: '1 Склад', auto_id: a2.id, dispatcher_id: dis1.id)
-Trek.create(trek_date: 1.days.ago, address: 'Б Адрес', store: '3 Склад', auto_id: a1.id, dispatcher_id: dis2.id)
-Trek.create(trek_date: 1.days.ago, address: 'В Адрес', store: '2 Склад', auto_id: a3.id, dispatcher_id: dis3.id)
-Trek.create(trek_date: 2.days.ago, address: 'А Адрес', store: '2 Склад', auto_id: a4.id, dispatcher_id: dis4.id)
-Trek.create(trek_date: 2.days.ago, address: 'В Адрес', store: '1 Склад', auto_id: a4.id, dispatcher_id: dis4.id)
-Trek.create(trek_date: 2.days.ago, address: 'Б Адрес', store: '3 Склад', auto_id: a2.id, dispatcher_id: dis3.id)
-Trek.create(trek_date: 3.days.ago, address: 'А Адрес', store: '1 Склад', auto_id: a3.id, dispatcher_id: dis2.id)
-Trek.create(trek_date: 3.days.ago, address: 'В Адрес', store: '3 Склад', auto_id: a1.id, dispatcher_id: dis1.id)
+5.times do
+	Dispatcher.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, password: "123") 
+end
+
+dispatchers = Dispatcher.all
+
+5.times do
+  Auto.create( 
+    num: Faker::Vehicle.license_plate, 
+    mark: Faker::Vehicle.make,
+    driver: drivers[rand(0..4)]
+  )
+end
+
+cars = Auto.all
+
+20.times do |i|
+  Trek.create(
+    trek_date: i.days.ago,
+    address: Faker::Address.full_address,
+    store: Faker::Locations::Australia.location,
+    auto: cars[rand(0..4)],
+		dispatcher: dispatchers[rand(0..4)]
+  )
+end
+
+
+#Trek.create(trek_date: 1.days.ago, address: "В Адрес", store: "А Склад", auto_id: a.id)
+#Trek.create(trek_date: 2.days.ago, address: "П Адрес", store: "Д Склад", auto_id: a1.id)
+#Trek.create(trek_date: 3.days.ago, address: "О Адрес", store: "К Склад", auto_id: a2.id)
+
+# id: 5, name: "Maxwell Dietrich", email: "bert@wilkinson.test", phone: "(244) 711-5212",
+#id: 10, name: "Msgr. Luciana Stiedemann", email: "fermin.keeling@senger-luettgen.test", phone: "290.503.1691",
