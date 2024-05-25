@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   # devise_for :dispatchers, :path_names => { :sign_in => '/'}
 	devise_scope :dispatchers do
