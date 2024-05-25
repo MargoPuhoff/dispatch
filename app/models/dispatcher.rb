@@ -22,5 +22,4 @@ class Dispatcher < ApplicationRecord
          :validatable
          
   has_many :treks
-  has_secure_password
 end

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
   include DriverSessionsHelper
-  before_action :check_user
 
   def check_dispathcer
     logged_in?

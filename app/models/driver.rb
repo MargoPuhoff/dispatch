@@ -13,7 +13,6 @@
 #
 class Driver < ApplicationRecord
   has_many :autos
-  has_secure_password
 
   def self.ransackable_attributes(_auth_object = nil)
     %w[created_at email id id_value name phone updated_at]
