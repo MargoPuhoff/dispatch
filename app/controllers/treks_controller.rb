@@ -1,5 +1,6 @@
 class TreksController < ApplicationController
   before_action :set_trek, only: %i[show edit update destroy complete]
+	before_action :authenticate_dispatcher!
 
   # GET /treks or /treks.json
   def index

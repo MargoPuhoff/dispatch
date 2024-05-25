@@ -16,4 +16,5 @@ class ApplicationController < ActionController::Base
 
     redirect_to controller: :home, action: :index
   end
+
 end
