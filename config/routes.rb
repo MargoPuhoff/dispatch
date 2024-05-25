@@ -2,10 +2,10 @@
 #
 
 Rails.application.routes.draw do
-  # devise_for :dispatchers, :path_names => { :sign_in => '/'}
-	devise_scope :dispatchers do
-		get 'login', to: 'home#index'
-	end
+  devise_for :dispatchers # :path_names => { :sign_in => '/'}
+	#devise_scope :dispatchers do
+	#	get 'login', to: 'home#index'
+	# end
   resources :dispatchers
   resources :treks do
     member do

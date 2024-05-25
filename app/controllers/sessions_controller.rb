@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :check_user
 
-  def new; end
+  def new; endИс
 
   def create
     dispatcher = Dispatcher.find_by(email: params[:session][:email].downcase)
