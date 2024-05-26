@@ -5,6 +5,7 @@ ruby '3.2.3'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'bcrypt'
 gem 'devise'
+gem 'kaminari'
 gem 'faker'
 gem 'html2slim'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
