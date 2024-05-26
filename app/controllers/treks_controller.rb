@@ -8,7 +8,7 @@ class TreksController < ApplicationController
          else
            Trek.joins(:drivers).ransack(params[:q])
          end
-    @treks = @q.result(distinct: true)
+    @treks = @q.result.page(params[:page]).per(10)
   end
 
   # GET /treks/1 or /treks/1.json
