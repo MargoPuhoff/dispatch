@@ -1,5 +1,9 @@
 class TreksController < ApplicationController
   before_action :set_trek, only: %i[show edit update destroy complete]
+	has_scope :by_store
+	has_scope :by_address
+	has_scope :by_date
+	has_scope :completed, type: :boolean
 
   # GET /treks or /treks.json
   def index
@@ -8,7 +12,7 @@ class TreksController < ApplicationController
          else
            Trek.joins(:drivers).ransack(params[:q])
          end
-    @treks = @q.result.page(params[:page]).per(10)
+		@treks = apply_scopes(@q.result).page(params[:page]).per(10)
   end
 
   # GET /treks/1 or /treks/1.json
