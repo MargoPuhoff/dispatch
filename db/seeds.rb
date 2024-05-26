@@ -19,6 +19,7 @@ end
 
 drivers = Driver.all
 
+Dispatcher.create(name: Faker::Name.name, email: "anna@anna.com", phone: Faker::PhoneNumber.cell_phone, password: '123')
 5.times do
   Dispatcher.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone, password: '123')
 end

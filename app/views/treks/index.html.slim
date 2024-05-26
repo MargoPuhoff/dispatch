@@ -10,8 +10,8 @@ nav class="m-2 flex"
   - if driver_logged_in?       
     p class="px-4 hover:text-emerald-700" 
       = link_to "Выйти", driver_logout_path, method: "delete"	
-    p class="px-4 hover:text-emerald-700" 
-      = link_to "Автомобили", autos_path
+  p class="px-4 hover:text-emerald-700" 
+    = link_to "Автомобили", autos_path
 
 h1 class="text-3xl font-bold mx-2 my-3" 
   | Заявки
