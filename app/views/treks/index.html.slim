@@ -35,3 +35,6 @@ table class="m-4 border border-emerald-700 rounded-2xl"
   tbody class="border border-emerald-700"
     - @treks.each do |trek|
       == render trek
+
+div
+	= paginate @treks
