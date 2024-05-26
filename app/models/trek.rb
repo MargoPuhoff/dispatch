@@ -17,10 +17,10 @@ class Trek < ApplicationRecord
   belongs_to :dispatcher
   has_many :drivers, through: :auto
 
-	scope :by_store, -> store { where(store: store) }
-	scope :completed, -> { where(completed: true) }
-  scope :by_address, -> address { where(address: address) }
-  scope :by_date, -> trek_date { where(trek_date: trek_date) }
+  scope :by_store, ->(store) { where(store:) }
+  scope :completed, -> { where(completed: true) }
+  scope :by_address, ->(address) { where(address:) }
+  scope :by_date, ->(trek_date) { where(trek_date:) }
 
 
   def self.ransackable_attributes(_auth_object = nil)
