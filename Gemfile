@@ -10,6 +10,7 @@ gem 'html2slim'
 gem 'kaminari'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 gem 'ransack'
+gem 'has_scope'
 gem 'slim-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
